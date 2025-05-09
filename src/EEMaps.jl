@@ -4,6 +4,8 @@ using PyCall
 
 const ee = PyNULL()
 
+include("ee_functions.jl")
+
 version() = VersionNumber(ee.__version__)
 
 """
@@ -58,6 +60,7 @@ function authenticate(args...; kwargs...)
   end
 end
 
-export ee, initialize, authenticate
+export ee, initialize, authenticate,
+  layer, geomap, geoplot, add_layer, get_features, add_drawn_layer, geotable_to_ee
 
 end
